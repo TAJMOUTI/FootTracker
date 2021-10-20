@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Match Fragment"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="79dp" />
+
+        <Spinner
+            android:id="@+id/spinnerTeam1"
+            android:layout_width="153dp"
+            android:layout_height="41dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="133dp" />
+
+        <Spinner
+            android:id="@+id/spinnerTeam2"
+            android:layout_width="153dp"
+            android:layout_height="41dp"
+            tools:layout_editor_absoluteX="242dp"
+            tools:layout_editor_absoluteY="133dp" />
+
+        <EditText
+            android:id="@+id/scoreTeam1"
+            android:layout_width="75dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="185dp" />
+
+        <EditText
+            android:id="@+id/scoreTeam2"
+            android:layout_width="75dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="242dp"
+            tools:layout_editor_absoluteY="185dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="66dp"
+            android:layout_height="55dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="329dp"
+            tools:layout_editor_absoluteY="185dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="69dp"
+            android:layout_height="53dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="185dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
