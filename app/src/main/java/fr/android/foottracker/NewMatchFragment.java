@@ -15,17 +15,7 @@ public class NewMatchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_maps, container, false);
-
-        //Initialize fragment
-        Fragment fragment = new MapsFragment();
-
-        //Open fragment
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.frame_layout,fragment)
-                .commit();
-
+        View view = inflater.inflate(R.layout.fragment_newmatch, container, false);
         return view;
     }
 
