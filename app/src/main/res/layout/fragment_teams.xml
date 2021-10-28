@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,53 +10,50 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            android:text="Teams Fragment"
-            android:textSize="30sp"
-            tools:layout_editor_absoluteX="93dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <EditText
-            android:id="@+id/editTeamName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="159dp" />
+                android:text="Teams Fragment"
+                android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/createTeamButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="254dp" />
+            <EditText
+                android:id="@+id/editTeamName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="385dp"
-            android:layout_height="330dp"
-            tools:layout_editor_absoluteX="13dp"
-            tools:layout_editor_absoluteY="386dp" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="132dp"
+                android:layout_height="26dp"
+                android:text="Liste des Equipes" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="132dp"
-            android:layout_height="26dp"
-            android:text="Liste des Equipes"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="352dp" />
+            <Button
+                android:id="@+id/createTeamButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nouvelle equipe"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="95dp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nouvelle equipe" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/teamList"
+                android:layout_width="385dp"
+                android:layout_height="330dp" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

@@ -1,48 +1,44 @@
-package fr.android.foottracker;
+package fr.android.foottracker.database;
 
  import java.sql.Connection;
  import java.sql.DriverManager;
  import java.sql.PreparedStatement;
-
+ import java.util.concurrent.Callable;
 
 
 public class DBConnection {
 
     private Connection connection;
 
-    static String DB_URL = "jdbc:mysql://10.0.2.2:3306/Foot_Tracker";
+    static String DB_URL = "jdbc:mysql://10.0.2.2:3306/foot_tracker";
     static String USER = "root";
     static String PASSWORD = "";
 
-    public Connection ConnectionToDataBase(){
+    public Connection getConnection() {
+
+        Connection connection = null;
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
+
+            Callable<Connection> getConnection = () -> {
+
+                Connection c = null;
+
+                try {
+                    c =  DriverManager.getConnection(DB_URL, USER, PASSWORD);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return c;
+
+            };
+
+            connection = getConnection.call();
         }catch (Exception e){
             e.printStackTrace();
         }
-
-        new Thread(() -> {
-            String msg = "Inside Thread";
-
-            try {
-                connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-
-                if (connection == null) {
-                    msg = "Connection goes wrong, there is no one";
-                } else {
-
-                    System.out.println("The query was successfully done");
-
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }).start();
-
-
-
 
         return connection;
 

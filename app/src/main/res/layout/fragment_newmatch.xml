@@ -42,38 +42,43 @@
             tools:layout_editor_absoluteY="133dp" />
 
         <EditText
-            android:id="@+id/scoreTeam1"
-            android:layout_width="75dp"
+            android:id="@+id/localisation"
+            android:layout_width="206dp"
             android:layout_height="53dp"
             android:ems="10"
             android:inputType="number"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="185dp" />
-
-        <EditText
-            android:id="@+id/scoreTeam2"
-            android:layout_width="75dp"
-            android:layout_height="53dp"
-            android:ems="10"
-            android:inputType="number"
-            tools:layout_editor_absoluteX="242dp"
-            tools:layout_editor_absoluteY="185dp" />
+            tools:layout_editor_absoluteX="61dp"
+            tools:layout_editor_absoluteY="207dp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="66dp"
-            android:layout_height="55dp"
+            android:id="@+id/createMatchButton"
+            android:layout_width="118dp"
+            android:layout_height="56dp"
             android:text="Button"
-            tools:layout_editor_absoluteX="329dp"
-            tools:layout_editor_absoluteY="185dp" />
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="659dp" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="69dp"
-            android:layout_height="53dp"
-            android:text="Button"
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="375dp"
+            android:layout_height="345dp"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="185dp" />
+            tools:layout_editor_absoluteY="295dp" >
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/localisationButton"
+            android:layout_width="65dp"
+            android:layout_height="59dp"
+            android:onClick="openMapsActivity"
+            android:text="Button"
+            tools:layout_editor_absoluteX="290dp"
+            tools:layout_editor_absoluteY="207dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

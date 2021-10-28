@@ -22,7 +22,6 @@ import com.google.android.material.navigation.NavigationView;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import static fr.android.foottracker.DBConnection.ConnectionToDataBase;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -31,9 +30,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        connection();
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); //Set our Toolbar as the ActionBar
@@ -55,22 +51,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(android.os.Build.VERSION.SDK_INT > 9){
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-        }
-    }
-
-    private void connection(){
-        try{
-            Functions func = new Functions();
-            Statement st = func.connectionSQLBDD();
-            String SQL = "SELECT * FROM Teams";
-            final ResultSet rs = st.executeQuery(SQL);
-            while (rs.next()) {
-                //Get informations from ResultSet
-                String name = rs.getString("name");
-                System.out.println(name);
-            }
-        } catch (Exception e){
-            e.printStackTrace();
         }
     }
 
