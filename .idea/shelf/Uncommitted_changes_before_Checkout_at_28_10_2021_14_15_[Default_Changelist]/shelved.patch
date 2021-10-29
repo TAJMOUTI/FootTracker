@@ -1,0 +1,24 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/fragment_history.xml\" value=\"0.25416666666666665\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,7 +3,13 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/activity_connection.xml" value="0.13020833333333334" />
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/activity_main.xml" value="0.2631578947368421" />
+         <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/fragment_newmatch.xml" value="0.13020833333333334" />
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/fragment_settings.xml" value="0.13020833333333334" />
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/layout/nav_header.xml" value="0.13020833333333334" />
++        <entry key="..\:/Users/elian/AndroidStudioProjects/FootTracker/app/src/main/res/menu/drawer_menu.xml" value="0.264" />
+       </map>
+     </option>
+   </component>
