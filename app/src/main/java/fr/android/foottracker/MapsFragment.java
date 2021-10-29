@@ -29,6 +29,7 @@ public class MapsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_maps2, container, false);
 
+
         SupportMapFragment supportMapFragment = (SupportMapFragment)
                 getChildFragmentManager().findFragmentById(R.id.google_map);
 
@@ -46,6 +47,10 @@ public class MapsFragment extends Fragment {
                         Double longitude = markerOptions.getPosition().longitude;
                         System.out.println(latitude);
                         System.out.println(longitude);
+
+                        //EditText affichage_latitude = (EditText) getView().findViewById(R.id.localisation);
+                        //affichage_latitude.setText(latitude.toString());
+
 
                         googleMap.clear();
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
