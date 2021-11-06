@@ -5,7 +5,7 @@ public class Team {
     private int idTeam;
     private String name;
 
-    public Team(int idTeam, String name) {
+    public Team(Integer idTeam, String name) {
         this.idTeam = idTeam;
         this.name = name;
     }

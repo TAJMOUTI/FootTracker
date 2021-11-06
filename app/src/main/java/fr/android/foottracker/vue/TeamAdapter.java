@@ -1,4 +1,4 @@
-package fr.android.foottracker.TeamsRecyclerView;
+package fr.android.foottracker.vue;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -41,4 +41,6 @@ public class TeamAdapter extends RecyclerView.Adapter <TeamViewHolder> {
     public int getItemCount() {
         return teamList.size();
     }
+
+
 }

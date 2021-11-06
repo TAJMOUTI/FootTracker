@@ -1,8 +1,11 @@
 package fr.android.foottracker.database.DAO;
 
 
+import com.mysql.jdbc.Statement;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +41,11 @@ public class TeamDAO implements DAO<Team>{
     }
 
     @Override
+    public Team get(String name, int id) {
+        return null;
+    }
+
+    @Override
     public List<Team> getAll() {
         List<Team> teamList = new ArrayList<>();
 
@@ -45,7 +53,7 @@ public class TeamDAO implements DAO<Team>{
 
             System.out.println(dbConnection.getConnection());
 
-            PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement("SELECT * FROM TEAM ");
+            PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement("SELECT * FROM TEAM ORDER BY name ASC ");
             ResultSet resultSet = preparedStatement.executeQuery(); // Execute la requete et affiche le resultat
 
             while (resultSet.next()){
@@ -65,8 +73,30 @@ public class TeamDAO implements DAO<Team>{
     }
 
     @Override
-    public Team insert(Team object) {
-        return null;
+    public int create(Team team) {
+        System.out.println("DAO CREATE TEAM");
+
+        PreparedStatement preparedStatement;
+        String createTeamQuery = "INSERT INTO team(Name) VALUES (?)";
+        int generatedKeys = -1;
+        try {
+            preparedStatement = dbConnection.getConnection().prepareStatement(createTeamQuery, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString( 1, team.getName());
+
+            int teamCreated = preparedStatement.executeUpdate();
+            //Recupere l'id de la game crée
+            ResultSet rs = preparedStatement.getGeneratedKeys();
+            if (rs.next()) {
+                generatedKeys = rs.getInt(1);
+            }
+            if(teamCreated != 0){
+                System.out.println("Team has been successfully added");
+                return generatedKeys;
+            }
+        } catch (SQLException pbSQL) {
+            pbSQL.printStackTrace() ;
+        }
+        return generatedKeys;
     }
 
     @Override

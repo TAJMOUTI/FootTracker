@@ -1,4 +1,4 @@
-package fr.android.foottracker.TeamsRecyclerView;
+package fr.android.foottracker.vue;
 
 import android.view.View;
 import android.widget.TextView;

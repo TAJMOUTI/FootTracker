@@ -12,6 +12,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -21,16 +22,24 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+import fr.android.foottracker.database.MySQLiteOpenHelper;
+import fr.android.foottracker.models.Team;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-
+    private MySQLiteOpenHelper myDatabaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        myDatabaseHelper = new MySQLiteOpenHelper(this);
+        //createTeam(56653, "pink team");
+        //createTeam(98675, "black team");
+        //getTeam();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); //Set our Toolbar as the ActionBar
 
@@ -51,6 +60,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(android.os.Build.VERSION.SDK_INT > 9){
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
+        }
+    }
+
+
+    public void createTeam(int idTeam, String teamName){
+        Team newTeam = new Team(idTeam, teamName);
+        boolean insertData = myDatabaseHelper.createTeam(newTeam);
+        if(insertData){
+            System.out.println("data inserted");
+        } else System.out.println("error");
+    }
+
+
+
+
+    public void getTeam(){
+        Log.d("Reading: ", "Reading all teams..");
+        ArrayList<Team> teamList = myDatabaseHelper.getTeamsList();
+
+        for (Team t : teamList) {
+            System.out.println("in for loop");
+
+            String log = "Id: " + t.getIdTeam() + " ,Name: " + t.getName();
+            // Writing Contacts to log
+            Log.d("GET TEAMS: ", log);
         }
     }
 
