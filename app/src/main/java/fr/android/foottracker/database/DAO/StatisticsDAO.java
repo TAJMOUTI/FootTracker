@@ -21,11 +21,15 @@ public class StatisticsDAO implements DAO<Statistics> {
     public Statistics get(String teamName, int idGame) {
         Statistics statistics = null;
 
+        System.out.println("getting stats in DAO");
+        System.out.println("DAO TEAM NAME"+ teamName);
+        System.out.println("DAO ID GAME"+ idGame);
         try {
             PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement("SELECT * FROM Statistics WHERE idGame = ? AND teamName = ?");
-            preparedStatement.setInt(0, idGame); //
-            preparedStatement.setString(1, teamName);
+            preparedStatement.setInt(1, idGame);
+            preparedStatement.setString(2, teamName);
             ResultSet resultSet = preparedStatement.executeQuery(); // Execute la requete et affiche le resultat
+            System.out.println("after query in DAO");
 
             while (resultSet.next()){
                 statistics = new Statistics(
@@ -39,6 +43,7 @@ public class StatisticsDAO implements DAO<Statistics> {
                         resultSet.getInt("coupsFrancs"),
                         resultSet.getInt("horsjeu")
                 );
+                return statistics;
 
             }
 

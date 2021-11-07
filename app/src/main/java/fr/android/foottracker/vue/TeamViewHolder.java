@@ -16,9 +16,8 @@ public class TeamViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         teamItem = itemView.findViewById(R.id.teamNameTextView);
     }
+
     public void updateTeam(Team team){
-
         teamItem.setText(team.getName());
-
     }
 }

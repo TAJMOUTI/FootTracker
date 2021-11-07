@@ -20,11 +20,14 @@ public class TeamAdapter extends RecyclerView.Adapter <TeamViewHolder> {
     //Create Constructor
 
     public TeamAdapter (List<Team> teamView){
+        System.out.println("TEAM ADAPTER");
         teamList = teamView;
     }
 
     @Override
-    public TeamViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public TeamViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        System.out.println("TEAM onCreateViewHolder");
+
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.team_item_layout, parent, false);

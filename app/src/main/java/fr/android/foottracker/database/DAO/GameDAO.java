@@ -9,10 +9,12 @@ import com.mysql.jdbc.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.android.foottracker.database.DBConnection;
 import fr.android.foottracker.models.Game;
+import fr.android.foottracker.models.Team;
 
 public class GameDAO implements DAO<Game> {
 
@@ -30,7 +32,26 @@ public class GameDAO implements DAO<Game> {
 
     @Override
     public List<Game> getAll() {
-        return null;
+        List<Game> gameList = new ArrayList<>();
+
+        try {
+            PreparedStatement preparedStatement = dbConnection.getConnection().prepareStatement("SELECT * FROM GAME ORDER BY dateGame ASC ");
+            ResultSet resultSet = preparedStatement.executeQuery(); // Execute la requete et affiche le resultat
+
+            while (resultSet.next()){
+                gameList.add(new Game(
+                                resultSet.getInt("idGame"),
+                                resultSet.getString("nameTeam1"),
+                                resultSet.getString("nameTeam2"),
+                                resultSet.getString("dateGame"),
+                                resultSet.getString("localisation")
+                        )
+                );
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return gameList;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

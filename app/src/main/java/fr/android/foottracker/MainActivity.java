@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new HistoryFragment()).commit();
+                new TeamsFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_history);
         }
 
