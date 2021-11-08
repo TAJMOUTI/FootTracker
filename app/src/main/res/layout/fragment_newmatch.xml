@@ -50,34 +50,23 @@
                 android:layout_gravity="center"
                 android:text="Button" />
 
-            <FrameLayout
-                android:id="@+id/frame_layout"
-                android:layout_width="375dp"
-                android:layout_height="345dp"
-                android:layout_gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="327dp"
+                android:orientation="vertical">
 
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapView"
+                <fragment
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
+                    android:layout_height="match_parent"
+                    android:id="@+id/google_map"
+                    class="com.google.android.gms.maps.SupportMapFragment"/>
+            </LinearLayout>
 
-            <EditText
+            <TextView
                 android:id="@+id/localisation"
                 android:layout_width="206dp"
                 android:layout_height="53dp"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:inputType="number"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <Button
-                android:id="@+id/localisationButton"
-                android:layout_width="65dp"
-                android:layout_height="59dp"
-                android:layout_gravity="center"
-                android:onClick="openMapsActivity"
-                android:text="Button" />
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
