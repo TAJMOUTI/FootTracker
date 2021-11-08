@@ -68,12 +68,14 @@ public class HistoryFragment extends Fragment {
                 System.out.println("in for each");
 
                 //Recuperation des stats pour la team 1
-                System.out.println("team1"+game.getNameTeam1());
+                System.out.println("team1 "+game.getNameTeam1());
                 Callable<Statistics> callableStat1 =  () -> new StatisticsDAO().get(game.getNameTeam1(), game.getIdGame());
                 Statistics stat1 = callableStat1.call();
 
+                System.out.println("stat1.getTeamName()");
+                System.out.println(stat1.getTeamName());
                 //Recuperation des stats pour la team 2
-                System.out.println("team1"+game.getNameTeam1());
+                System.out.println("team2 "+game.getNameTeam2());
                 Callable<Statistics> callableStat2 =  () -> new StatisticsDAO().get(game.getNameTeam2(), game.getIdGame());
                 Statistics stat2 = callableStat2.call();
 

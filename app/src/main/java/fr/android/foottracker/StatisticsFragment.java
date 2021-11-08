@@ -1,8 +1,11 @@
 package fr.android.foottracker;
 
+import android.graphics.Camera;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -154,6 +157,13 @@ public class StatisticsFragment extends Fragment {
 
     }
 
+    private void redirectToPhoto(){
+        CameraFragment fragmentCamera = new CameraFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragmentCamera);
+        fragmentTransaction.commit();
+    }
     //etape 2
     public void setDefaultValues(){
         teamName1.setText(team1);
@@ -256,5 +266,7 @@ public class StatisticsFragment extends Fragment {
 
         Statistics gameStatisticsTeam2ToCreate = new Statistics(0, idGame, team2, nbButsTeam2, nbCartonRougeTeam2, nbCartonJauneTeam2, nbPenaltyTeam2, nbCoupFrancTeam2, nbHorsJeuTeam2);
         new StatisticsDAO().create(gameStatisticsTeam2ToCreate);
+
+        redirectToPhoto();
     }
 }
