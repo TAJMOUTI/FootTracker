@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FootTracker</string>
+    <string name="next">Suivant</string>
+    <string name="previous">précedent</string>
+    <string name="hello_first_fragment">Hello premier fragment</string>
+    <string name="hello_second_fragment">Hello second fragment</string>
+    <string name="hello_blank_fragment">Hello blanc fragment</string>
+    <string name="second_fragment_label">second fragment</string>
+    <string name="first_fragment_label">premier fragment</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="newe">Nouveau match</string>
+    <string name="NewMatch">Nouveau match</string>
+    <string name="Teams">Equipe</string>
+    <string name="Settings">Parametre</string>
+</resources>

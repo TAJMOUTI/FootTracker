@@ -11,4 +11,22 @@
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/app_anglais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anglais" />
+
+        <Button
+            android:id="@+id/app_francais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Français" />
+    </LinearLayout>
+
 </RelativeLayout>

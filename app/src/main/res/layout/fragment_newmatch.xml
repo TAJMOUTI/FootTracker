@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="New Match Fragment"
+                android:text= "@string/newe"
                 android:textSize="30sp" />
 
             <Spinner
@@ -41,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:ems="10"
-                android:inputType="date" />
+                android:inputType="date"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
                 android:id="@+id/createMatchButton"
@@ -53,13 +54,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="327dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <fragment
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:id="@+id/google_map"
-                    class="com.google.android.gms.maps.SupportMapFragment"/>
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
             <TextView

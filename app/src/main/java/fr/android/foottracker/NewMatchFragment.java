@@ -3,7 +3,10 @@ package fr.android.foottracker;
 import static android.content.ContentValues.TAG;
 import static android.content.Context.LOCATION_SERVICE;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -20,6 +23,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -43,35 +47,45 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_newmatch, container, false);
+        try {
+            View view = inflater.inflate(R.layout.fragment_newmatch, container, false);
+            SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_map);
 
-        SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_map);
+            supportMapFragment.getMapAsync(this);
 
-        supportMapFragment.getMapAsync(this);
+            View mapView = supportMapFragment.getView();
+            mapView.post(new Runnable() {
+                @Override
+                public void run() {
+                    int width = mapView.getMeasuredWidth();
+                    int height = mapView.getMeasuredHeight();
 
-        View mapView = supportMapFragment.getView();
-        mapView.post(new Runnable() {
-            @Override
-            public void run() {
-                int width = mapView.getMeasuredWidth();
-                int height = mapView.getMeasuredHeight();
+                    String widthAndHeight = width + " " + height;
+                }
+            });
 
-                String widthAndHeight = width + " " + height;
-            }
-        });
+            lm = (LocationManager) view.getContext().getSystemService(LOCATION_SERVICE);
+            tvAddress = view.findViewById(R.id.localisation);
 
-        lm = (LocationManager) view.getContext().getSystemService(LOCATION_SERVICE);
-        tvAddress = view.findViewById(R.id.localisation);
+            return view;
 
-        return view;
+        }catch (Exception e) {
+            Log.e(TAG, "onCreateView", e);
+            throw e;
+        }
+
     }
 
     @SuppressLint("MissingPermission")
     public void onResume() {
         super.onResume();
 
-        // 2 - register to receive the location events before the activity becomes visible
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, this);
+        if (ActivityCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 10, this);
+        }
+        else {
+            ActivityCompat.requestPermissions(this.getActivity(), new String[]{ Manifest.permission.ACCESS_FINE_LOCATION },1);
+        }
     }
 
 
