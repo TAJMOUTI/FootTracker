@@ -33,6 +33,8 @@ public class TeamsFragment extends Fragment {
     TeamAdapter teamsAdapter;
     FragmentTransaction ft;
     List<Team> teamList;
+    private MySQLiteOpenHelper myDatabaseHelper;
+
 
     @Nullable
     @Override
@@ -52,11 +54,16 @@ public class TeamsFragment extends Fragment {
         if(teamNameText.length() == 0){
             Toast.makeText(getActivity().getApplicationContext(), "Team name shouldn't be empty", Toast.LENGTH_LONG).show();
         } else {
-        Team teamToCreate = new Team(0, teamNameText);
-        System.out.println("before creating a team");
+            Team teamToCreate = new Team(0, teamNameText);
 
-        new TeamDAO().create(teamToCreate);
-        System.out.println("after creating a team");
+            getActivity().getApplicationContext().deleteDatabase("foot_tracker.db");
+
+            myDatabaseHelper = new MySQLiteOpenHelper(getActivity()); //SQLITE
+        myDatabaseHelper.createTeam(teamToCreate);
+        //myDatabaseHelper.close();
+
+        new TeamDAO().create(teamToCreate); //MYSQL
+
         teamName.setText("");
 
         teamList.add(insertIndex, teamToCreate);

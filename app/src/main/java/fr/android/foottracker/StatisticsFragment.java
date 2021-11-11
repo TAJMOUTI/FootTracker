@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 import fr.android.foottracker.database.DAO.GameDAO;
 import fr.android.foottracker.database.DAO.StatisticsDAO;
+import fr.android.foottracker.database.MySQLiteOpenHelper;
 import fr.android.foottracker.models.Game;
 import fr.android.foottracker.models.Statistics;
 
@@ -27,7 +28,7 @@ import fr.android.foottracker.models.Statistics;
  * create an instance of this fragment.
  */
 public class StatisticsFragment extends Fragment {
-
+    private MySQLiteOpenHelper myDatabaseHelper;
     private int idGame;
     private String team1;
     private String team2;
@@ -261,11 +262,18 @@ public class StatisticsFragment extends Fragment {
     }
 
     public void saveStatGame(View view){
+        myDatabaseHelper = new MySQLiteOpenHelper(getActivity().getApplicationContext()); //SQLITE
+
         Statistics gameStatisticsTeam1ToCreate = new Statistics(0, idGame, team1, nbButsTeam1, nbCartonRougeTeam1, nbCartonJauneTeam1, nbPenaltyTeam1, nbCoupFrancTeam1, nbHorsJeuTeam1);
+        myDatabaseHelper.createStatistics(gameStatisticsTeam1ToCreate);
         new StatisticsDAO().create(gameStatisticsTeam1ToCreate);
 
         Statistics gameStatisticsTeam2ToCreate = new Statistics(0, idGame, team2, nbButsTeam2, nbCartonRougeTeam2, nbCartonJauneTeam2, nbPenaltyTeam2, nbCoupFrancTeam2, nbHorsJeuTeam2);
+        myDatabaseHelper.createStatistics(gameStatisticsTeam2ToCreate);
         new StatisticsDAO().create(gameStatisticsTeam2ToCreate);
+
+        myDatabaseHelper.close();
+
 
         redirectToPhoto();
     }

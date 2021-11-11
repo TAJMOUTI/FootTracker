@@ -34,12 +34,18 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
 
 import fr.android.foottracker.database.DAO.GameDAO;
 import fr.android.foottracker.database.DAO.TeamDAO;
+import fr.android.foottracker.database.MySQLiteOpenHelper;
 import fr.android.foottracker.models.Game;
 import fr.android.foottracker.models.Team;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -49,17 +55,21 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.util.Locale;
 
 public class NewMatchFragment extends Fragment implements OnMapReadyCallback, LocationListener {
 
+    private MySQLiteOpenHelper myDatabaseHelper;
     private GoogleMap mMap;
     private LocationManager lm;
     Button localisationButton;
     Button createMatchButton;
     FrameLayout framelayout;
     TextView tvAddress;
+    TextView dateTextView;
     Spinner spinnerTeam1;
     Spinner spinnerTeam2;
     String teamName1;
@@ -179,6 +189,11 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
 
         Game gameToCreate = new Game(0, teamName1, teamName2, date, localisation);
 //        System.out.println("before creating a game");
+
+        myDatabaseHelper = new MySQLiteOpenHelper(getActivity()); //SQLITE
+        myDatabaseHelper.createGame(gameToCreate);
+        //myDatabaseHelper.close();
+
         int newGame = new GameDAO().create(gameToCreate); //Save Game in database and return id of created game
 
         //Open Statistics Fragment and pass arguments
@@ -202,6 +217,14 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
         framelayout = (FrameLayout) view.findViewById(R.id.frame_layout);
         localisationButton = (Button) view.findViewById(R.id.localisationButton);
         createMatchButton = (Button) view.findViewById(R.id.createMatchButton);
+        dateTextView = (TextView) view.findViewById(R.id.dateTextView);
+
+        String pattern = "dd/MM/yyyy HH:mm";
+        DateFormat df = new SimpleDateFormat(pattern);
+        Date today = Calendar.getInstance().getTime();
+        date= df.format(today);
+        dateTextView.setText(date);
+
         try{
             Callable<List<Team>> callable = () -> new TeamDAO().getAll();
             List<Team> teamList = callable.call();
