@@ -51,7 +51,6 @@
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:minHeight="48dp"
-                        android:text="Name"
                         android:textColor="@color/textColor" />
 
                     <Button

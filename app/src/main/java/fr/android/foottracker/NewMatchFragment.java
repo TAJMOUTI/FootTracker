@@ -21,12 +21,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -53,7 +56,9 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
 
     private GoogleMap mMap;
     private LocationManager lm;
-    Button btnShowAddress;
+    Button localisationButton;
+    Button createMatchButton;
+    FrameLayout framelayout;
     TextView tvAddress;
     Spinner spinnerTeam1;
     Spinner spinnerTeam2;
@@ -68,8 +73,8 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
         try {
             View view = inflater.inflate(R.layout.fragment_newmatch, container, false);
             initializeComponents(view);
-            Button button = (Button) view.findViewById(R.id.createMatchButton);
-            button.setOnClickListener(this::createGame);
+            createMatchButton.setOnClickListener(this::createGame);
+            localisationButton.setOnClickListener(this::localizeMe);
             SupportMapFragment supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_map);
 
             supportMapFragment.getMapAsync(this);
@@ -95,6 +100,13 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
             throw e;
         }
 
+    }
+
+
+    private void localizeMe(View view){
+        framelayout.setVisibility(View.VISIBLE);
+        System.out.println(localisation);
+        tvAddress.setText(localisation);
     }
 
     @SuppressLint("MissingPermission")
@@ -138,7 +150,6 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
         mMap.moveCamera(CameraUpdateFactory.newLatLng(newPos));
 
         Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-        String result = null;
         try {
             List<Address> addressList = geocoder.getFromLocation(
                     lat, lng, 1);
@@ -151,9 +162,7 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
                 sb.append(address.getLocality()).append("\n");
                 sb.append(address.getPostalCode()).append("\n");
                 sb.append(address.getCountryName());
-                result = sb.toString();
-                System.out.println(result);
-                tvAddress.setText(result);
+                localisation = sb.toString();
             }
         } catch (IOException e) {
             Log.e(TAG, "Unable connect to Geocoder", e);
@@ -162,8 +171,12 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void createGame(View view){
-        date = "29-12-1997";
-        localisation = "6 rue jytrstyd";
+        if(teamName1 == teamName2){
+            Toast.makeText(getActivity().getApplicationContext(), "Team names shouldn't be the same", Toast.LENGTH_LONG).show();
+        } else if (tvAddress.getText().toString().length() == 0) {
+            Toast.makeText(getActivity().getApplicationContext(), "Localisation shouldn't be empty", Toast.LENGTH_LONG).show();
+        } else {
+
         Game gameToCreate = new Game(0, teamName1, teamName2, date, localisation);
 //        System.out.println("before creating a game");
         int newGame = new GameDAO().create(gameToCreate); //Save Game in database and return id of created game
@@ -180,12 +193,15 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragmentStatistics);
         fragmentTransaction.commit();
+        }
     }
 
     private void initializeComponents(View view) {
          spinnerTeam1 = (Spinner) view.findViewById(R.id.spinnerTeam1);
          spinnerTeam2 = (Spinner) view.findViewById(R.id.spinnerTeam2);
-
+        framelayout = (FrameLayout) view.findViewById(R.id.frame_layout);
+        localisationButton = (Button) view.findViewById(R.id.localisationButton);
+        createMatchButton = (Button) view.findViewById(R.id.createMatchButton);
         try{
             Callable<List<Team>> callable = () -> new TeamDAO().getAll();
             List<Team> teamList = callable.call();
@@ -234,8 +250,6 @@ public class NewMatchFragment extends Fragment implements OnMapReadyCallback, Lo
                 }
 
             });
-
-
         } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -25,7 +25,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="30dp"
                 android:orientation="vertical">
@@ -137,6 +137,7 @@
                         android:layout_height="53dp"
                         android:layout_marginRight="20dp"
                         android:ems="10"
+                        android:textColor="@color/textColor"
                         android:inputType="number" />
 
                     <Button
@@ -153,13 +154,14 @@
                 <FrameLayout
                     android:id="@+id/frame_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
 
-                    <androidx.fragment.app.FragmentContainerView
+                    <fragment
                         android:id="@+id/google_map"
                         class="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="200dp" />
                 </FrameLayout>
             </LinearLayout>
 

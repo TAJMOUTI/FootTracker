@@ -46,12 +46,13 @@ public class TeamsFragment extends Fragment {
 
     public void createTeam(View view){
         int insertIndex = teamList.size();
-        System.out.println("Taille tableau" + insertIndex);
-
-        System.out.println("Creatinggggg a team");
         teamName = (EditText) getView().findViewById(R.id.editTeamName); //Recupère la view du champs teamName grace à son id
         String teamNameText = teamName.getText().toString(); // recupère le contenu du champs teamName
-        Team teamToCreate = new Team(6231323, teamNameText);
+
+        if(teamNameText.length() == 0){
+            Toast.makeText(getActivity().getApplicationContext(), "Team name shouldn't be empty", Toast.LENGTH_LONG).show();
+        } else {
+        Team teamToCreate = new Team(0, teamNameText);
         System.out.println("before creating a team");
 
         new TeamDAO().create(teamToCreate);
@@ -60,6 +61,7 @@ public class TeamsFragment extends Fragment {
 
         teamList.add(insertIndex, teamToCreate);
         teamsAdapter.notifyItemInserted(insertIndex);
+        }
     }
 
     @Override
