@@ -21,11 +21,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -33,12 +31,15 @@
             android:layout_height="match_parent"/>
         
     </LinearLayout>
-    
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
         android:layout_gravity="start"
+        app:itemTextColor="@color/textColor"
+        app:itemIconTint="@color/textColor"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"/>
 

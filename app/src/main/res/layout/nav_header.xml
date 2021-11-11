@@ -2,27 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="@color/colorAccent"
-    android:gravity="bottom"
+    android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:paddingHorizontal="10dp"
+    android:theme="@style/AppTheme">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@mipmap/foottracker_logo_foreground" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Coding in flow"
+        android:text="Foot Tracker"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="info@codingflow.com" />
 
 </LinearLayout>

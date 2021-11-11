@@ -1,86 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Match Fragment"
+                android:text="@string/new_match_title"
+                android:textAlignment="center"
                 android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
+                android:layout_height="170dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:orientation="vertical">
 
-                <Spinner
-                    android:id="@+id/spinnerTeam1"
-                    android:layout_width="153dp"
-                    android:layout_height="41dp" />
-
-                <Spinner
-                    android:id="@+id/spinnerTeam2"
-                    android:layout_width="153dp"
-                    android:layout_height="41dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/localisation"
-                    android:layout_width="206dp"
-                    android:layout_height="53dp"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <Button
-                    android:id="@+id/localisationButton"
-                    android:layout_width="65dp"
-                    android:layout_height="59dp"
-                    android:onClick="openMapsActivity"
-                    android:text="Button" />
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/frame_layout"
-                android:layout_width="375dp"
-                android:layout_height="345dp">
-
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/mapView"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/label_date_match"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/editTextDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:textAlignment="center" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/label_match_team1"
+                            android:textAlignment="center" />
+
+                        <Spinner
+                            android:id="@+id/spinnerTeam1"
+                            android:layout_width="153dp"
+                            android:layout_height="41dp"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="62dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:text="@string/label_versus"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="157dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/label_match_team2"
+                            android:textAlignment="center" />
+
+                        <Spinner
+                            android:id="@+id/spinnerTeam2"
+                            android:layout_width="153dp"
+                            android:layout_height="41dp"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/textColor" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="179dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/label_localisation"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/localisation"
+                        android:layout_width="231dp"
+                        android:layout_height="53dp"
+                        android:layout_marginRight="20dp"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                    <Button
+                        android:id="@+id/localisationButton"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button"
+                        android:onClick="openMapsActivity"
+                        android:text="@string/button_localisation" />
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="71dp" />
+                </FrameLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/createMatchButton"
-                android:layout_width="118dp"
-                android:layout_height="56dp"
-                android:text="Button" />
-
+                android:layout_width="129dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
+                android:text="@string/button_start_match" />
         </LinearLayout>
 
 

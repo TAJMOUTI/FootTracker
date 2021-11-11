@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //getTeam();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); //Set our Toolbar as the ActionBar
+        getSupportActionBar().setTitle(null);
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
@@ -51,10 +53,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         if (savedInstanceState == null) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new TeamsFragment()).commit();
-        navigationView.setCheckedItem(R.id.nav_history);
+        navigationView.setCheckedItem(R.id.nav_teams);
         }
 
         if(android.os.Build.VERSION.SDK_INT > 9){
@@ -106,9 +109,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new SettingsFragment()).commit();
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
         }
 
