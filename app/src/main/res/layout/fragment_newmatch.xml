@@ -115,7 +115,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="179dp"
+                android:layout_height="301dp"
                 android:layout_marginHorizontal="20dp"
                 android:orientation="vertical">
 
@@ -155,10 +155,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.google.android.gms.maps.MapView
-                        android:id="@+id/mapView"
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/google_map"
+                        class="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="71dp" />
+                        android:layout_height="match_parent" />
                 </FrameLayout>
             </LinearLayout>
 
