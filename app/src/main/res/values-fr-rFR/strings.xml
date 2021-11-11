@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FootTracker</string>
+    <string name="next">Suivant</string>
+    <string name="previous">précedent</string>
+    <string name="hello_first_fragment">Hello premier fragment</string>
+    <string name="hello_second_fragment">Hello second fragment</string>
+    <string name="hello_blank_fragment">Hello blanc fragment</string>
+    <string name="second_fragment_label">second fragment</string>
+    <string name="first_fragment_label">premier fragment</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="newe">Nouveau match</string>
+    <string name="NewMatch">Nouveau match</string>
+    <string name="Teams">Equipe</string>
+    <string name="Settings">Parametre</string>
+
+
+
+    <string name="teams_title">Equipes</string>
+    <string name="label_new_team">Ajouter une nouvelle équipe</string>
+    <string name="label_teams_list">Liste des équipes</string>
+
+    <string name="new_match_title">Nouveau Match</string>
+    <string name="label_date_match">Date du match</string>
+    <string name="label_match_team1">Equipe 1</string>
+    <string name="label_match_team2">Equipe 2</string>
+    <string name="label_versus">VS</string>
+    <string name="label_localisation">Localisation</string>
+    <string name="button_start_match">Commencer le match</string>
+    <string name="button_localisation">Localisez moi</string>
+
+    <string name="history_title">Historique</string>
+
+    <string name="settings_title">Paramètres</string>
+</resources>

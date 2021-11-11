@@ -22,6 +22,18 @@
             android:textAlignment="center"
             android:textSize="30sp" />
 
+        <Button
+            android:id="@+id/app_anglais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anglais" />
+
+        <Button
+            android:id="@+id/app_francais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Français" />
+
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
