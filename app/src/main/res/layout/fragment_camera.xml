@@ -8,25 +8,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="100dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnOpenCamera"
-            android:layout_width="match_parent"
+            android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:text="Open Cam" />
+            android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button"
+            android:text="@string/openCamera" />
 
         <ImageView
             android:id="@+id/imageShowPicture"
             android:layout_width="match_parent"
             android:layout_height="296dp"
+            android:layout_gravity="center"
             tools:src="@tools:sample/avatars" />
 
         <Button
             android:id="@+id/btnSavePicture"
-            android:layout_width="match_parent"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Save" />
+            android:layout_gravity="center"
+            android:layout_marginVertical="50dp"
+            android:background="@drawable/button"
+            android:text="@string/savePicture" />
     </LinearLayout>
 </FrameLayout>

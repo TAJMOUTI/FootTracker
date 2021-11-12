@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="69dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/textViewNameTeam1"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="NameTeam1" />
+                android:text="NameTeam1"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textViewButsTeam1"
-                android:layout_width="match_parent"
+                android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textViewButsTeam2"
-                android:layout_width="match_parent"
+                android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textViewNameTeam2"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="NameTeam2" />
+                android:text="NameTeam2"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -61,14 +67,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/labelCartonJaune"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="CartonJaune" />
+                android:text="CartonJaune"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/numberCartonJauneTeam2"
@@ -76,7 +84,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -91,7 +100,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/labelCartonRouge"
@@ -100,7 +110,8 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="CartonRouge" />
+                android:text="CartonRouge"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/numberCartonRougeTeam2"
@@ -108,7 +119,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -123,14 +135,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/labelPenalty"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Penalty" />
+                android:text="Penalty"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/numberPenaltyTeam2"
@@ -138,7 +152,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -153,14 +168,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/labelCoupFranc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Coup Franc" />
+                android:text="Coup Franc"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/numberCoupFrancTeam2"
@@ -168,7 +185,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -183,14 +201,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/labelHorsJeu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Hors Jeu" />
+                android:text="Hors Jeu"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/numberHorsJeuTeam2"
@@ -198,7 +218,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textAlignment="center" />
 
         </LinearLayout>
 

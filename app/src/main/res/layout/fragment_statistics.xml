@@ -21,20 +21,21 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="40dp">
 
                 <TextView
                     android:id="@+id/teamName1"
-                    android:layout_width="196dp"
+                    android:layout_width="205dp"
                     android:layout_height="48dp"
-                    android:text="teamName2" />
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/teamName2"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="teamName2" />
+                    android:textAlignment="center" />
             </LinearLayout>
 
 
@@ -43,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Buts"
+                android:text="@string/goals"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -53,15 +54,15 @@
 
                 <Button
                     android:id="@+id/addGoalTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberGoalsTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -70,7 +71,7 @@
 
                 <EditText
                     android:id="@+id/numberGoalsTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -79,10 +80,10 @@
 
                 <Button
                     android:id="@+id/addGoalTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
             </LinearLayout>
 
@@ -91,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cartons Jaunes"
+                android:text="@string/cartons_jaunes"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -101,16 +102,15 @@
 
                 <Button
                     android:id="@+id/addCartonJauneTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
-
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberCartonJauneTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -119,7 +119,7 @@
 
                 <EditText
                     android:id="@+id/numberCartonJauneTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -128,10 +128,10 @@
 
                 <Button
                     android:id="@+id/addCartonJauneTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
 
                     android:text="+" />
             </LinearLayout>
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cartons Rouges"
+                android:text="@string/cartons_rouges"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -151,15 +151,15 @@
 
                 <Button
                     android:id="@+id/addCartonRougeTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberCartonRougeTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -168,7 +168,7 @@
 
                 <EditText
                     android:id="@+id/numberCartonRougeTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -177,10 +177,10 @@
 
                 <Button
                     android:id="@+id/addCartonRougeTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
 
                     android:text="+" />
             </LinearLayout>
@@ -190,7 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Penalty"
+                android:text="@string/penalty"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -200,15 +200,15 @@
 
                 <Button
                     android:id="@+id/addPenaltyTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberPenaltyTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -217,7 +217,7 @@
 
                 <EditText
                     android:id="@+id/numberPenaltyTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -226,10 +226,10 @@
 
                 <Button
                     android:id="@+id/addPenaltyTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
             </LinearLayout>
 
@@ -238,7 +238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Coups Francs"
+                android:text="@string/coups_francs"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -248,15 +248,15 @@
 
                 <Button
                     android:id="@+id/addCoupFrancTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberCoupFrancTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -265,7 +265,7 @@
 
                 <EditText
                     android:id="@+id/numberCoupFrancTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -274,10 +274,10 @@
 
                 <Button
                     android:id="@+id/addCoupFrancTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
             </LinearLayout>
 
@@ -286,7 +286,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hors Jeu"
+                android:text="@string/hors_jeu"
                 android:textAlignment="center" />
 
             <LinearLayout
@@ -296,15 +296,15 @@
 
                 <Button
                     android:id="@+id/addHorsJeuTeam1Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
 
                 <EditText
                     android:id="@+id/numberHorsJeuTeam1"
-                    android:layout_width="21dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -313,7 +313,7 @@
 
                 <EditText
                     android:id="@+id/numberHorsJeuTeam2"
-                    android:layout_width="30dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -322,20 +322,21 @@
 
                 <Button
                     android:id="@+id/addHorsJeuTeam2Button"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/button"
+                    android:background="@drawable/button_round"
                     android:text="+" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/saveStatGameButton"
-                android:layout_width="wrap_content"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="Sauvegarder" />
+                android:layout_marginVertical="30dp"
+                android:text="@string/saveMatch" />
 
 
         </LinearLayout>

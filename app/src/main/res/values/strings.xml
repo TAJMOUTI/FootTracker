@@ -32,8 +32,28 @@
 
     <string name="settings_title">Settings</string>
 
-    <string name="newe">New match</string>
     <string name="NewMatch">New Match</string>
     <string name="Teams">Teams</string>
     <string name="Settings">Settings</string>
+    <string name="openCamera">Open Camera</string>
+    <string name="savePicture">Save Picture</string>
+
+    <string name="english">English</string>
+    <string name="french">French</string>
+
+
+    <string name="goals">Goals</string>
+    <string name="cartons_jaunes">Yellow card</string>
+    <string name="cartons_rouges">Red card</string>
+    <string name="penalty">Penaltys</string>
+    <string name="coups_francs">Free kicks</string>
+    <string name="hors_jeu">Hors jeu</string>
+
+    <string name="saveMatch">Save match</string>
+
+
+
+
+
+
 </resources>

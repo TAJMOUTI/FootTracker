@@ -9,7 +9,6 @@
     <string name="second_fragment_label">second fragment</string>
     <string name="first_fragment_label">premier fragment</string>
     <string name="title_activity_maps">Maps</string>
-    <string name="newe">Nouveau match</string>
     <string name="NewMatch">Nouveau match</string>
     <string name="Teams">Equipe</string>
     <string name="Settings">Parametre</string>
@@ -32,4 +31,21 @@
     <string name="history_title">Historique</string>
 
     <string name="settings_title">Paramètres</string>
+
+    <string name="openCamera">Ouvrir la camera</string>
+    <string name="savePicture">Sauvegarder la photo</string>
+
+    <string name="english">Anglais</string>
+    <string name="french">Francais</string>
+
+    <string name="goals">Buts</string>
+    <string name="cartons_jaunes">Cartons Jaunes</string>
+    <string name="cartons_rouges">Cartons Rouges</string>
+    <string name="penalty">Penaltys</string>
+    <string name="coups_francs">French</string>
+    <string name="hors_jeu">Hors jeu</string>
+
+    <string name="saveMatch">Sauvegarder le match</string>
+
+
 </resources>

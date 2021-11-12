@@ -20,19 +20,26 @@
             android:layout_height="wrap_content"
             android:text="@string/settings_title"
             android:textAlignment="center"
+            android:layout_marginBottom="50dp"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/app_anglais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Anglais" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button"
+            android:text="@string/english" />
 
         <Button
             android:id="@+id/app_francais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Français" />
+            android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button"
+            android:text="@string/french" />
 
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
