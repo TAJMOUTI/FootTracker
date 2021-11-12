@@ -10,7 +10,7 @@ public class DBConnection {
 
     private Connection connection;
 
-    static String DB_URL = "jdbc:mysql://127.0.0.1:8080/foot_tracker";
+    static String DB_URL = "jdbc:mysql://10.0.2.2:3306/foot_tracker";
     static String USER = "root";
     static String PASSWORD = "";
 
